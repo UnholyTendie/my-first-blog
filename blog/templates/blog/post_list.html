@@ -2,11 +2,15 @@
 <html>
     <head>
         <title>Ashton's blog</title>
+        <h1>Hi there!</h1>
     </head>
     <body>
-        <h1>Hi there!</h1>
-        <p>you can learn how to make a web page like this at
-            <a href="https://djangogirls.org">link</a>
-        </p>
+        {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
     </body>
 </html>
